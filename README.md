@@ -23,6 +23,6 @@ All required tests pass.
 
 * [Google Fonts](http://fonts.googleapis.com/css?family=Roboto:400,100,300,700) - Font
 * [Jasmine](https://github.com/jasmine/jasmine) - Testing Framework
-* [Google Feed Reader API] (https://developers.google.com/feed/) - RSS Feed Integration
-* [Handlebars] (https://handlebarsjs.com/) - Templating Library
-* [jQuery] (https://jquery.com/) - JavaScript Library
+* [Google Feed Reader API](https://developers.google.com/feed/) - RSS Feed Integration
+* [Handlebars](https://handlebarsjs.com/) - Templating Library
+* [jQuery] https://jquery.com/) - JavaScript Library
