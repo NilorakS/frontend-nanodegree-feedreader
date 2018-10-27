@@ -76,12 +76,12 @@ $(function() {
         });
     });
 
-    /* This test suite is all about loading the initial etries.
+    /* This test suite is all about loading the initial entries.
      */
     describe('Initial Entries', function() {
         beforeEach(function(done) {
             loadFeed(0, done);
-        })
+        });
 
         /* This test ensures when the loadFeed
          * function is called and completes its work, there is at least
@@ -90,13 +90,34 @@ $(function() {
         it('are loaded', function() {
             const feed = document.querySelector('.feed');
             expect(feed.children.length > 0).toBe(true);
-        })
+        });
     });
 
-    /* TODO: Write a new test suite named "New Feed Selection" */
+    /* This test suite is all about the correct loading of new feeds.
+     */
+    describe('New Feed Selection', function() {
+        const feed = document.querySelector('.feed');
+        let firstFeed;
+        let secondFeed;
+        
+        beforeEach(function(done) {
+            loadFeed(0, function() {
+                firstFeed = feed.firstElementChild.innerText;
 
-        /* TODO: Write a test that ensures when a new feed is loaded
+                loadFeed(1, function() {
+                    secondFeed = feed.firstElementChild.innerText;
+                    done();
+                });
+            });                       
+        });
+
+        /* This test ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
          */
+        it('changes content', function() {
+            expect(firstFeed).toBeDefined();
+            expect(secondFeed).toBeDefined();
+            expect(firstFeed).not.toEqual(secondFeed);  
+        });
+    });    
 }());
