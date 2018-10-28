@@ -29,7 +29,7 @@ $(function() {
          * and that the URL is not empty.
          */
         it('have URLs defined', function() {
-            for (feed of allFeeds) {
+            for (let feed of allFeeds) {
                 expect(feed.url).toBeDefined();
                 expect(feed.url.length).not.toBe(0);
             }         
@@ -41,7 +41,7 @@ $(function() {
          * and that the name is not empty.
          */
         it('have names defined', function() {
-            for (feed of allFeeds) {
+            for (let feed of allFeeds) {
                 expect(feed.name).toBeDefined();
                 expect(feed.name.length).not.toBe(0);
             }  
@@ -88,8 +88,7 @@ $(function() {
          * a single .entry element within the .feed container.
          */
         it('are loaded', function() {
-            const feed = document.querySelector('.feed');
-            expect(feed.children.length > 0).toBe(true);
+            expect($('.feed .entry').length > 0).toBe(true);
         });
     });
 
